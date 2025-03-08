@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>specificity CSS</title>
+    <style>
+        /* https://developer.mozilla.org/pt-BR/docs/Web/CSS/Specificity */
+
+        p{
+            background-color: rgb(199, 245, 180) !important; 
+        }
+        .observation{
+            background-color: blue;
+            border: dashed 5px;
+            padding: 200px !important;
+            font-size: 400px;
+        }
+        p.observation{
+            padding: 2px;
+            font-size: 40px;
+            background: linear-gradient(to right, blue, green, yellow)
+        }
+
+    </style>
+</head>
+
+<body>
+    <p class='observation'>Check out this note!!!!</p>
+</body>
+
+</html>
