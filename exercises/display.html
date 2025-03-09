@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Display</title>
+    <style>
+        body{
+            font-size: 40px;
+            color: #fff;
+            background-color: coral;
+        }
+        
+        ul{padding: 0;}
+        div{background-color: seagreen;}
+        span{background-color: dodgerblue;}
+        li{background-color: purple;}
+
+        div, span, li{
+            width: 50%;
+            width: 200px;
+            height: 80px;
+            padding-top: 30px;
+            text-align: center;
+            display: block; /*block = each element has its own row*/
+            display: inline; /*inline = it is now allow to change the width and height of the component */
+            display: inline-block; /*components are in the same row, but the width and height is considered*/
+        }
+    </style>
+</head>
+
+<body>
+    <div>Text 1</div>
+    <span>Text 2</span>
+    <span>Text 3</span>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+</body>
+
+</html>

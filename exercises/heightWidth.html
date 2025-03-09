@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Height & Width</title>
+    <style>
+        html{
+            height: 100%;
+        }
+        body {
+            font-size: 40px;
+            background-color: coral;
+            height: 100%;
+            margin: 0;
+        }
+
+        div {
+            background-color: seagreen;
+        }
+
+        span { /*disregard heigh a width*/
+            background-color: dodgerblue;
+        }
+
+        span, div{
+            width: 50%;
+            height: 250px;
+            height: 50%; /*if I do not insert height: 250px, it not change the div, because the body is too small
+                        if you put html and body 100%, it makes difference*/
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div>Title</div>
+    <span>Subheading</span>
+</body>
+
+</html>
