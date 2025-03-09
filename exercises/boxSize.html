@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Box Size</title>
+    <style>
+        *{
+            box-sizing: border-box; /*it applies to every element*/
+        }
+        body {
+            font-size: 45px;
+            margin: 0;
+        }
+
+        div{
+            background-color: deepskyblue;
+            width: 100%; /*size of the content*/
+            height: 300px;
+            padding: 100px;
+            border: solid 20px;
+            box-sizing: content-box; /*it considers only the content (if width=600px, only the content is 600px)*/
+            box-sizing: border-box; /*everthing is consider to get 100% (if width=600px,the border until the content is 600px)*/
+        }
+    </style>
+</head>
+<body>
+    <div>
+        The size of the Box is ...
+    </div>
+</body>
+</html>
