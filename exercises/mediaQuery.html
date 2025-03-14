@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Media Query</title>
+    <style>
+        div {
+            font-size: 40px;
+            margin: 20px;
+            padding: 20px;
+            background-color: coral;
+            border: solid 5px;
+            display: none;
+        }
+
+        /*if the max width of the elements is 600px, it shows the display*/
+        @media (max-width:600px){
+            .too-small {display: block;}
+        }
+
+        /*if the max width of the elements is 1000px or the orientation is landscape,
+         it shows the display*/
+        @media (max-width:1000px), (orientation: landscape){
+            .small-portrait {display: block;}
+        }
+        
+        /*if the width of the elements is between 500 and 1000 or the orientation is landscape,
+         it shows the display*/
+        @media (min-width:500px) and (max-width:1000px){
+            .intervalo {display: block;}
+        }
+
+    </style>
+</head>
+<body>
+    <div class="too-small">Too small</div>
+    <div class="small-portrait">Small or Portrait</div>
+    <div class="intervalo">Intervalo</div>
+</body>
+</html>
