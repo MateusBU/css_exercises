@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Unities #01</title>
+    <style>
+        .unities-absolute{
+            position: absolute;
+            font-size: 40px;
+            padding: 20px;
+            border: solid 5px #222;
+            margin: 30px;
+            width: 4cm;
+            height: 20mm;
+            top: 150px; /*from the top of tha page until this element. It works because of the position*/
+        }
+
+        .unities-relative{
+            position: relative;
+            /*it is good when you change the size of the fon in the settings of the browser. The text gets bigger or smaller*/
+            font-size: 4em; /*four times bigger than the father's element*/
+            border: solid 1vw #222; /*1vw = 1 cem avos from the width of the page*/
+            margin: .8%;
+            width: 20vw;
+            height: 15vh;
+            bottom: 5%;
+            right: 5%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="unities-absolute">Opa!</div>
+    <div class="unities-relative">Epa!</div>
+</body>
+
+</html>

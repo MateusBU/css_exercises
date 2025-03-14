@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Unity #02</title>
+    <style>
+        .out{
+            position: relative;
+            background-color: orangered;
+            width: 400px;
+            height: 400px;
+            padding: 50px;
+        }
+        .int{
+            background-color: mediumseagreen;
+            height: 100px;
+            width: 100%;
+            position: static /*static, relative = content*/;
+            position: absolute /*absolute = content + padding*/;
+            position: fixed; /*content = size of viewport*/
+        }
+
+    </style>
+</head>
+<body>
+    <div class="out">
+        <div class="int"></div>
+    </div>
+</body>
+</html>
