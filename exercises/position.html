@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Position</title>
+    <style>
+        div{
+            font-size: 60px;
+            padding: 30px;
+            border: solid 5px #222;
+        }
+
+        .static{
+            top: 100px; /*not changes*/
+            left: 100px; /*not changes*/
+            background-color: steelblue;
+        }
+
+        .fixed{
+            position: fixed; /*it gets fixed, it doesn't move 
+            (it can used as a button to go to the header of the page)*/
+            bottom: 30px; /*30px from the bottom of the page*/
+            right: 0px; /*0px from the right of the page*/
+            background-color: tomato;
+        }
+
+        .relative1{
+            position: relative;
+            left: 20px; /*20px from the previous element, because of the relative*/
+            top: 5px; /*5px from the previous element*/
+        }
+
+        .absolute1{
+            position: absolute;
+            left: 350px; /*350px from the viewport (page)*/
+            top: 0px; /*0px from the viewport (page)*/
+            background-color: tomato;
+        }
+
+        .relative2{
+            position: relative;
+            left: 250px;
+            top: 2000px;
+            width: 200px;
+            height: 200px;
+            background-color: gray;
+        }
+
+        .absolute2{
+            position: absolute; /*it is absolute from the father element
+            (relative2), just because relative2 is position: relative*/
+            left: 10px;
+            top: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: olivedrab;
+        }
+
+        .sticky{
+            /*when it arrives to the top of the page, it stops 
+            (until the value of the top:0px)*/
+            position: -webkit-sticky; /*safari*/
+            position: sticky;
+            background-color: #777;
+            top: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="static">Static (Standard)</div>
+    <div class="fixed">Fixed</div>
+    <div class="relative1">Relative</div>
+    <div class="absolute1">Absolute</div>
+
+    <div class="relative2">
+        <div class="absolute2"></div>
+    </div>
+
+    <div class="sticky">Sticky</div>
+    <p style="padding-bottom: 2000px;">Opa</p>
+</body>
+
+</html>
