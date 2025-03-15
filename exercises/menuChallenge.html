@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio Menu</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        body{
+            background-color: gainsboro;
+            margin: 0;
+            padding: 0px;
+        }
+
+        /*----HEADER----*/
+        .class-header{
+            background-color: darkslategrey;
+            height: 80px; /* Set your desired height */
+            line-height: 80px; /* Vertically centers inline elements */
+            padding: 0;
+            margin: 0;
+            display: flex;
+            box-sizing: border-box;
+            border-bottom: 4px solid lightseagreen; /* Thickness, style, and color */
+        }
+        
+        /*----LOGO IMG----*/
+        .logo{
+            padding: 5px;
+            min-width: 80px;
+        }
+
+        .logo img{
+            max-width: 90%;  /* Make the image scale to fit the container */
+            max-height: 80%;  /* Ensure the image height doesn't exceed the header */
+            object-fit: contain;  /* Maintain aspect ratio */
+        }
+
+        /*----MENU BUTTON----*/
+        .menu-toggle{
+            background-color: lightseagreen;
+            display: none;
+            right: 0px;
+            position: absolute;
+            height: 76px;
+            box-sizing: border-box;
+        }
+
+
+        @media (max-width:600px){
+            .menu-toggle {display: block;}
+        }
+
+
+        /*----MENU----*/
+        .menu{
+            padding: 0px;
+            margin: 0px;
+            height: 100%;
+            width: 500px;
+            display: inline-block;
+            box-sizing: border-box;
+        }
+
+        .horizontal-list{
+            padding: 0px;
+            margin: 0px;
+            height: 100%;
+            box-sizing: border-box;
+            justify-content: space-around; /* Distribute items symmetrically */
+        }
+
+        li{
+            height: 100%;
+            margin: 0px 10px;
+            width: 80px;
+            font-size: 1.2em;
+            text-align: center;
+            display: inline-block;
+            background-color: darkslategrey;
+        }
+
+        li a{
+            color: #fff;
+        }
+
+        li:hover{
+            background-color: lightseagreen;
+        }
+        
+        @media (max-width:600px){
+            .menu{display: none;}
+        }
+
+        a{
+            text-decoration: none; /* Remove underline */
+        }
+
+        /*----AUTENTICATION----*/
+        .autentication{
+            width: 700px;
+            display: flex;
+            flex-direction: row-reverse;
+        }
+   
+        @media (max-width:680px){
+            .autentication{display: none;}
+        }
+
+        .autentication a{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0px 10px;
+        }
+
+        .login{
+            color: #fff;
+            margin: 20px 10px;
+        }
+
+        .button-class{
+            font-size: 25px;
+            padding: 10px 30px;
+            border-radius: 25px;
+            margin: 10px;
+        }
+
+        .highlights{
+            color: #fff;
+            background-color: tomato;
+            box-shadow: 2px 2px 1px 1px #000;
+        }
+
+        .highlights:active{
+            box-shadow: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="class-header">
+        <div class="logo">
+            <a href="#start">
+                <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo" />
+            </a>
+        </div>
+        <button class="menu-toggle">
+            <i class="fa fa-lg fa-bars"></i>
+        </button>
+        <nav class="menu">
+            <ul class="horizontal-list">
+                <li>
+                    <a href="#start">Start</a>
+                </li>
+                <li>
+                    <a href="#Courses">Courses</a>
+                </li>
+                <li>
+                    <a href="#about">About</a>
+                </li>
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <aside class="autentication">
+            <a href="#register" class="button-class highlights">Register</a>
+            <a href="#login" class="login">Login</a>
+        </aside>
+    </header>
+
+    <script>
+        // ...
+    </script>
+</body>
+
+</html>
