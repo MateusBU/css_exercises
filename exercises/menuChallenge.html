@@ -142,7 +142,7 @@
 
 <body>
     <header class="class-header">
-        <div class="logo">
+        <div class="logo menu-a">
             <a href="#start">
                 <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo" />
             </a>
@@ -153,16 +153,16 @@
         <nav class="menu">
             <ul class="horizontal-list">
                 <li>
-                    <a href="#start">Start</a>
+                    <a class="menu-a" href="#start">Start</a>
                 </li>
                 <li>
-                    <a href="#Courses">Courses</a>
+                    <a class="menu-a" href="#Courses">Courses</a>
                 </li>
                 <li>
-                    <a href="#about">About</a>
+                    <a class="menu-a" href="#about">About</a>
                 </li>
                 <li>
-                    <a href="#contact">Contact</a>
+                    <a class="menu-a" href="#contact">Contact</a>
                 </li>
             </ul>
         </nav>
@@ -173,7 +173,50 @@
     </header>
 
     <script>
-        // ...
+        function changeColorMenu(link, oldValueHash){
+
+            // Get the href of the clicked link
+            let hrefValue = `a[href='${link.getAttribute("href")}']`; // Remove the '#' character
+
+            let targetElement =  document.querySelectorAll(hrefValue);
+
+            console.log(`targetElement: ${targetElement.values}`);
+            
+            let liElements =  document.querySelectorAll('li');
+            liElements.forEach(function(item, index) {
+                item.style.backgroundColor = 'darkslategrey';
+            });
+
+            targetElement.forEach(element =>{
+                let parentElement = element.parentElement;
+                console.log(`parentElement.tagName: ${parentElement.tagName}`);
+                if(parentElement.tagName == 'LI'){
+                    parentElement.style.backgroundColor = "lightseagreen";
+                }
+            })
+            
+        }
+
+        function callbackEventListenerClick(event, link){
+            let oldValueHash = window.location.hash;
+            changeColorMenu(link, oldValueHash);
+        }
+
+        function clickEvent(){
+            // Get all <a> elements with the class "menu-a"
+            let menuLinks = document.getElementsByClassName("menu-a");
+
+            // Loop through each link and add an event listener for the click event
+            for (let link of menuLinks) {
+                link.addEventListener("click", function(event){
+                    callbackEventListenerClick(event, link);
+                });
+            }
+        }
+        
+
+        clickEvent();
+
     </script>
 </body>
 
