@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio Menu</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            margin: 0;
+            font-family: '0swald', sans-serif;
+            background-color: lightgray;
+        }
+
+        .class-header{
+            background-color: black;
+            border-bottom: solid 5px #4faddb;
+            height: 80px;
+            box-sizing: content-box;
+        }
+
+        .logo{
+            display: inline-block;
+            height: 80px;
+            padding: 15px;
+        }
+
+        .logo img{
+            height: 100%;
+        }
+
+        .menu-toggle{
+            float: right; /*it goes to the right of the page*/
+            color: #eee;
+            background-color: #555;
+            border: solid 1px #777;
+            border-radius: 5px;
+            height: 40px;
+            padding: 10px 20px;
+            margin: 20px;
+        }
+
+        .menu{
+            display: inline-block;
+            vertical-align: top;
+            height: 80px;
+            padding: 25px;
+        }
+
+        .menu ul{
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li{
+            display: inline-block;
+        }
+
+        .class-header a{
+            text-decoration: none;
+            color: #eee;
+            font-size: 1.3em;
+        }
+
+        .menu a{
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .autentication{
+            float: right;
+            height: 80px;
+            padding: 25px;
+        }
+
+        .menu a:hover,
+        .menu a.selected{
+            background-color: #4faddb;
+            color: black;
+        }
+
+        .button-class{
+            border-radius: 30px;
+            padding: 10px 25px;
+            margin: 10px;
+        }
+
+        .highlights{
+            background-color: orangered;
+            color: #fff;
+        }
+
+        @media(min-width: 730px){
+            .menu-toggle{
+                display: none;
+            }
+        }
+
+        @media(max-width: 731px){
+            .menu{
+                display: none;
+            }
+        }
+
+        @media(max-width: 936px){
+            .autentication{
+                display: none;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <header class="class-header">
+        <div class="logo">
+            <a href="#start">
+                <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo" />
+            </a>
+        </div>
+        <button class="menu-toggle">
+            <i class="fa fa-lg fa-bars"></i>
+        </button>
+        <nav class="menu">
+            <ul class="horizontal-list">
+                <li>
+                    <a href="#start">Start</a>
+                </li>
+                <li>
+                    <a href="#Courses">Courses</a>
+                </li>
+                <li>
+                    <a href="#about">About</a>
+                </li>
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <aside class="autentication">
+            <a href="#login" class="login">Login</a>
+            <a href="#register" class="button-class highlights">Register</a>
+        </aside>
+    </header>
+
+    <script>
+        //callback => when url changes
+        window.onhashchange = function(e){
+            const oldUrl = e.oldURL.split('#')[1]; //gets the second part, it separated by the #
+            const newUrl = e.newURL.split('#')[1]; //gets the second part, it separated by the #
+            console.log(oldUrl, newUrl);
+
+            const oldMenu = document.querySelector(`.menu a[href='#${oldUrl}']`);
+            
+            const newMenu = document.querySelector(`.menu a[href='#${newUrl}']`);
+
+            /*class selcted is used in CSS to change the color of the li*/
+            oldMenu && oldMenu.classList.remove('selected');
+            newMenu && newMenu.classList.add('selected');
+
+        }
+    </script>
+</body>
+
+</html>
