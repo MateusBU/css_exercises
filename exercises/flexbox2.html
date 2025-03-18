@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox #02</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        .flex-container div{
+            box-sizing: border-box;
+        }
+
+        .flex-container{
+            display: flex;
+            height: 300px;
+            width: 600px;
+        }
+
+        /*third child from flex-container*/
+        .flex-container div:nth-child(3){
+            background-color: indianred;
+
+            order: 1; /*every element from diplay flex has order 0.
+            1 is bigger. so it exhibited after */
+            order: -1;
+            align-self: center; /*it is just for this element*/
+            align-self: flex-end;
+        }
+
+        .flex-container div{
+            width: 100px;
+            flex-grow: 1;
+        }
+
+        /*flex-grow distribute the rest of the width to the elements, the number is
+        multiple the division between the space and the number of elem*/
+        .flex-container div:nth-child(1){
+            flex-grow: 10;
+        }
+
+        .flex-container{
+            width: 100px;
+            flex-shrink: 1; /*opposite of grow*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex-container tag nolabel">
+        <div class="tag nolabel">1</div>
+        <div class="tag nolabel">2</div>
+        <div class="tag nolabel">3</div>
+        <div class="tag nolabel">4</div>
+    </div>
+    <script src="js/tag.js"></script>
+</body>
+
+</html>
