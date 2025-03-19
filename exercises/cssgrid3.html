@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Grid #03</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        header{
+            grid-area: header_;
+        }
+
+        nav{
+            grid-area: navigation;
+        }
+
+        main{
+            grid-area: content_;
+        }
+
+        footer{
+            grid-area: footer_;
+        }
+
+        body{
+            display: grid;
+            min-height: 100vh;
+            grid-template-columns: 300px 1fr;
+            grid-template-rows: 100px 1fr 100px;
+            grid-template-areas: 
+            'header_ header_'
+            'navigation content_'
+            'footer_ footer_';
+        }
+
+    </style>
+</head>
+
+<body>
+    <main class="tag">CONTENT</main>
+    <header class="tag">HEADER</header>
+    <footer class="tag">FOOTER</footer>
+    <nav class="tag">NAV</nav>
+
+    <script src="js/tag.js"></script>
+</body>
+
+</html>
